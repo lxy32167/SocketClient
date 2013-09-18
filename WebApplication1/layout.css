@@ -1,0 +1,40 @@
+body { font-family:Verdana; font-size:14px; margin:0;}
+
+#container {margin:0 auto; width:1200px;
+}
+#header { height:100px; 
+background:#D2D2D2; margin-bottom:5px;padding-left:350px;padding-bottom:5px;border:groove 3px #fff;border-collapse:collapse;
+}
+#header_two { height:100px; 
+background:#D2D2D2; margin-bottom:5px;padding-bottom:5px;border:groove 3px #fff;border-collapse:collapse;
+}
+#mainContent { height:500px; 
+margin-bottom:5px;
+}
+#sidebar { float:right; width:200px; height:500px; background:#D2D2D2;}
+#givescore {float:right; width:200px; height:20px; background:#666666;border:groove 1px #fff;border-collapse:collapse;}
+#sidebarup {float:right; width:200px; height:100px; background:#D2D2D2;}
+#stuname {float:right; width:200px; height:20px; background:#D2D2D2;border:dashed 1px #fff;border-collapse:collapse;}
+#checkname {float:right; width:200px; height:20px; background:#666666;border:groove 1px #fff;border-collapse:collapse;}
+.sidebardown { float:right; width:174px; 
+height:280px; background:#D2D2D2;
+}
+#content { float:left; width:995px; height:500px; background:#D2D2D2;border:groove 1.5px #fff;border-collapse:collapse;}/*因为是固定宽度，采用左右浮动方法可有效避免ie 3像素bug*/
+#content1 { float:left; width:227px; 
+background:#defffd; padding-top:60px; padding-left:90px;margin-left:200px;margin-top:60px;
+    height: 233px;
+}
+#content2 { float:left; width:238px; 
+background:#defffd; padding-top:60px;margin-top:60px;
+    height: 233px; 
+}
+#contentLogin
+{
+    float: left;
+    width: 595px;
+    height: 350px;
+    background: #D2D2D2;
+    padding-left: 400px;
+    padding-top: 150px;
+} 
+#footer { height:20px; background:#709BCE;border:groove 3px #fff;border-collapse:collapse;}

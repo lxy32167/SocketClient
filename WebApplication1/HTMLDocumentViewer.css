@@ -1,0 +1,235 @@
+﻿/*@charset "UTF-8";*/
+/* RESET */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, font, img, ins, kbd, q, samp, small, strong, sub, sup, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, header, nav, article, aside, footer, hgroup, section
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    text-decoration: none;
+}
+
+:focus, :active
+{
+    outline: 0;
+}
+
+ol, ul
+{
+    list-style: none;
+}
+
+header, menu, nav, article, aside, footer, hgroup, section
+{
+    display: block;
+}
+
+/* TYPOGRAPHY */
+html
+{
+}
+
+body
+{
+    max-width: 1000px;
+    margin: 0 auto;
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    text-align: justify;
+    min-width: 1000px;
+}
+
+h1
+{
+    font: 24px/36px Colaborate-RegularRegular, "Trebuchet MS" , Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+hgroup
+{
+    margin-top: 5px;
+    height: 65px;
+}
+hgroup h1
+{
+    font: 24px/24px Arial, Helvetica, sans-serif, bolder;
+    color: #33aacc;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 200px;
+    padding-bottom: 0px;
+    padding-top: 11px;
+}
+hgroup h1 a:hover
+{
+    border: none;
+}
+hgroup h2
+{
+    font: 16px/16px Arial, Helvetica, sans-serif;
+    color: #33aacc;
+    text-align: left;
+    margin-left: 200px;
+    padding-top: 0px;
+}
+
+
+
+menu.main
+{
+    padding: 0px;
+    padding-bottom: 2px;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EEE;
+    background-image: linear-gradient(bottom, rgb(238,238,255) 36%, rgb(244,244,244) 68%);
+    background-image: -o-linear-gradient(bottom, rgb(238,238,255) 36%, rgb(244,244,244) 68%);
+    background-image: -moz-linear-gradient(bottom, rgb(238,238,255) 36%, rgb(244,244,244) 68%);
+    background-image: -webkit-linear-gradient(bottom, rgb(238,238,255) 36%, rgb(244,244,244) 68%);
+    background-image: -ms-linear-gradient(bottom, rgb(238,238,255) 36%, rgb(244,244,244) 68%);
+    background-image: -webkit-gradient( 	linear, 	left bottom, 	left top, 	color-stop(0.36, rgb(238,238,255)), 	color-stop(0.68, rgb(244,244,244)) );
+}
+
+menu.main ul.main_ul
+{
+    display: inline-block;
+    margin-right: auto;
+    text-align: center;
+}
+
+menu.main ul li
+{
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    border: 1px solid #CCCCCC;
+}
+
+menu.sub
+{
+    padding: 0px;
+    padding-top: 3px;
+    margin: 0px;
+    position: relative;
+}
+
+menu.main ul li menu.sub ul
+{
+    display: list-item;
+}
+
+menu.main ul li menu.sub input.button:hover
+{
+    background-color: Gray;
+}
+
+menu.main ul li a
+{
+    font: 10px/10px Arial, Helvetica, sans-serif;
+    color: #6F6F6F;
+    text-align: left;
+}
+
+menu.main ul li menu.sub input
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#upload-file-container
+{
+    width: 24px;
+    position: relative;
+    height: 24px;
+    float: left; /*    display: inline-block;*/
+}
+
+
+menu.main ul.main_ul li menu.sub input#FileToUpload.input
+{
+    position: absolute;
+    overflow: hidden;
+    width: 24px;
+    height: 24px;
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    opacity: 0;
+    left:0px;
+}
+
+/*This is a horrible terrible hack to get FireFox to render our single-click upload button properly.*/
+    @-moz-document url-prefix() {
+        menu.main ul.main_ul li menu.sub input#FileToUpload.input{
+            position: absolute;
+            overflow: hidden;
+            width: 24px;
+            height: 24px;
+            opacity: 0;
+            left:-193px;
+        }
+     }
+    
+
+#Insert-File-Container
+{
+    width: 24px;
+    position: relative;
+    height: 24px;
+    display:inline-block;
+}
+
+menu.main ul.main_ul li menu.sub input#FileToInsert.input
+{
+    position: absolute;
+    overflow: hidden;
+    width: 24px;
+    height: 24px;
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    opacity: 0;
+}
+
+menu.main ul li menu.sub ul li
+{
+}
+
+.nav
+{
+}
+
+/* MAIN */
+section
+{
+    background: #eeeeee;
+    margin: 0 0 30px 0;
+    height: 650px;
+    border-top: none;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+}
+
+section ul
+{
+    height: 100%;
+}
+
+section ul li
+{
+    display: inline-block;
+    height: 100%;
+    margin: auto;
+}
+
+section ul li#wtv
+{
+    width: 18%;
+    min-width: 140px;
+}
+
+section ul li#wav
+{
+    width: 81%;
+    min-width: 400px;
+}
