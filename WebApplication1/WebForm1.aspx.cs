@@ -209,6 +209,7 @@ namespace WebApplication1
             fmGetBlkRsp = (UMsgDefine.FM_GetBlkInfo_Rsp)UMsgDefine.BytesToStruct(RcvBlkMessage, typeof(UMsgDefine.FM_GetBlkInfo_Rsp));
             ///保存CheckRule待解析
             Session["CheckRule"] = fmGetBlkRsp.BlockInfo.CheckRule;
+            Session["ImgInfo"] = fmGetBlkRsp.BlockInfo.Position;
         }
         /// <summary>
         /// 注销用户
@@ -280,13 +281,18 @@ namespace WebApplication1
             }
             SaveToFile(fmGetPaperRsp);
 
-            WebAnnotationViewer1.ImageUrl = "~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".tif";
+            GetRect();
+            WebAnnotationViewer1.OpenUrl("~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".tif");
            
             Label3.Text = "学生姓名:" + new string(fmGetPaperRsp.PaperData.StudentName);
             Label5.Text = "试卷号:" + (fmGetPaperRsp.PaperData.PaperNo).ToString();
             
             Session["fmGetPaperReq"] = fmGetPaperReq;
             Session["fmGetPaperRsp"] = fmGetPaperRsp;
+        }
+        protected void GetRect()
+        {
+            int i, j, ImgID;
         }
         /// <summary>
         /// 保存图片信息
@@ -340,7 +346,7 @@ namespace WebApplication1
                 //SaveToFile 
                 SaveToFile(fmGetPaperRsp);
 
-                WebAnnotationViewer1.ImageUrl = "~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".jpg";
+                WebAnnotationViewer1.OpenUrl("~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".tif");
 
                 Label3.Text = "学生姓名:" + new string(fmGetPaperRsp.PaperData.StudentName);
                 Label5.Text = "试卷号:" + (fmGetPaperRsp.PaperData.PaperNo).ToString();
@@ -364,7 +370,7 @@ namespace WebApplication1
                 //SaveToFile 
                 SaveToFile(fmGetPaperRsp);
 
-                WebAnnotationViewer1.ImageUrl = "~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".jpg";
+                WebAnnotationViewer1.OpenUrl("~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".tif");
 
                 Label3.Text = "学生姓名:" + new string(fmGetPaperRsp.PaperData.StudentName);
                 Label5.Text = "试卷号:" + (fmGetPaperRsp.PaperData.PaperNo).ToString();
@@ -615,7 +621,7 @@ namespace WebApplication1
             //SaveToFile 
             SaveToFile(fmGetPaperRsp);
 
-            WebAnnotationViewer1.ImageUrl = "~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".jpg";
+            WebAnnotationViewer1.OpenUrl("~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".tif");
 
             beChecked = true;
 
@@ -771,7 +777,7 @@ namespace WebApplication1
                 }
             }
             
-        }
+        } 
 
         protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -1133,7 +1139,7 @@ namespace WebApplication1
             //SaveToFile 
             SaveToFile(fmGetPaperRsp);
 
-            WebAnnotationViewer1.ImageUrl = "~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".jpg";
+            WebAnnotationViewer1.OpenUrl("~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".tif");
 
             beChecked = true;
 
@@ -1178,7 +1184,7 @@ namespace WebApplication1
             //SaveToFile 
             SaveToFile(fmGetPaperRsp);
 
-            WebAnnotationViewer1.ImageUrl = "~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".jpg";
+            WebAnnotationViewer1.OpenUrl("~/PicTemp" + Session["UserID"].ToString() + "/" + fmGetPaperRsp.PaperData.PaperNo.ToString() + ".jpg");
 
             beChecked = true;
 

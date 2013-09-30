@@ -555,10 +555,9 @@ menu.main ul li menu.sub ul li
                      <div id="checkname" class="Title">
                      <asp:Label ID="Label2" runat="server" ForeColor="#FFFFFF" Text="试卷重查区" Font-Bold="True"></asp:Label>
                      </div>
-                     <asp:UpdatePanel ID="checkpanel" runat="server">
+                     <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                      <ContentTemplate>
-                     <div id ="CheckCell">
-                     
+                     <div id ="CheckCell">  
                      <table id="Table2" runat="server" cellpadding="0" cellspacing="0" width="100%" border="0">
                             <tr style="height:12px">
                                 <td class="SelectedTopBorder" id="Td1" align="center" style="width:80px;">
@@ -662,15 +661,14 @@ menu.main ul li menu.sub ul li
                      </asp:GridView>      
                      </asp:View>
                      </asp:MultiView>
-                     
-                </div>
-                </ContentTemplate>
-                <Triggers>
-                    <asp:PostBackTrigger ControlID="Button8"/>
-                    <asp:PostBackTrigger ControlID="LinkButton1" />
-                    <asp:PostBackTrigger ControlID="LinkButton2" />
-                </Triggers>
-                </asp:UpdatePanel>     
+                     </div>
+                     </ContentTemplate>
+                     <Triggers>
+                         <asp:PostBackTrigger ControlID="Button8" />
+                         <asp:PostBackTrigger ControlID="GridView3" />
+                         <asp:PostBackTrigger ControlID="GridView1" />
+                     </Triggers>
+                     </asp:UpdatePanel> 
             </div>
                 
             <div id="div4" style="clear:both; height: 4px;"></div>

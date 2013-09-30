@@ -231,11 +231,12 @@
     <Compile Include="Data\BlkUseClass.cs" />
     <Compile Include="Data\UConstDefine.cs" />
     <Compile Include="Data\UMsgDefine.cs" />
+    <Compile Include="Data\UMyRecords.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Data\UnitGlobalV.cs" />
-    <Compile Include="ImageProcessing.cs" />
+    <Compile Include="App_Code\ImageProcessing.cs" />
     <Compile Include="Login.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Login.aspx</DependentUpon>
@@ -260,7 +261,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\App_LocalResources\" />
   </ItemGroup>
   <PropertyGroup>
