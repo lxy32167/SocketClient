@@ -507,18 +507,26 @@ menu.main ul li menu.sub ul li
                 </li>
             </ul>
             </menu>
-            </div>      
+            </div>
             <div id="mainContent">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional"> 
+                <ContentTemplate>
                 <div id="content">                
                 <cc1:WebAnnotationViewer ID="WebAnnotationViewer1" runat="server" Width="100%" Height="100%"/><br />
                 </div>
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Button5"/>
+                    <asp:AsyncPostBackTrigger ControlID="Button8" />
+                    <asp:AsyncPostBackTrigger ControlID="GridView1" />
+                    <asp:AsyncPostBackTrigger ControlID="GridView3" />
+                </Triggers>     
+                </asp:UpdatePanel>
                 <div id="sidebar">
                     <div id="givescore" class="Title">
                     <asp:Label ID="Label9" runat="server" ForeColor="#FFFFFF" Text="试卷给分区" Font-Bold="True"></asp:Label>
                     </div>
-                    <div id="sidebarup" style="overflow:auto;width:100%""> 
-                    <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Always">
-                    <ContentTemplate>                 
+                    <div id="sidebarup" style="overflow:auto;width:100%"">                  
                     <asp:GridView ID="GridView2" runat="server" EnableModelValidation="True" AllowPaging="True" AutoGenerateColumns="False"
                      DataKeyNames="步骤" CellPadding="4" ForeColor="#333333"  Width="200px" OnPreRender="GridView2_PreRender" Visible="True">
                      <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
@@ -542,16 +550,31 @@ menu.main ul li menu.sub ul li
                      <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
                      <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
                      <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                     </asp:GridView>
-                     </ContentTemplate>
-                     </asp:UpdatePanel>                 
+                     </asp:GridView>          
                      </div> 
+
+                     <asp:UpdatePanel ID="UpdatePanel_submit" runat="server">
+                     <ContentTemplate>
                      <div id="submitbutton">
                      <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" style="margin-left:10px;margin-bottom:10px" Text="分数提交" />      
-                     </div> 
+                     </div>
+                     </ContentTemplate>
+                     </asp:UpdatePanel>
+                    
+                     <asp:UpdatePanel ID="UpdatePanel_stuname" runat="server">
+                     <ContentTemplate>
                      <div id="stuname" class="Title">
                      <asp:Label ID="Label3" runat="server" ForeColor="#000000" Font-Bold="True"></asp:Label>
                      </div>
+                     </ContentTemplate>
+                     <Triggers>
+                         <asp:AsyncPostBackTrigger ControlID="Button5"/>
+                         <asp:AsyncPostBackTrigger ControlID="Button8" />
+                         <asp:AsyncPostBackTrigger ControlID="GridView1" />
+                         <asp:AsyncPostBackTrigger ControlID="GridView3" />
+                     </Triggers>
+                     </asp:UpdatePanel> 
+
                      <div id="checkname" class="Title">
                      <asp:Label ID="Label2" runat="server" ForeColor="#FFFFFF" Text="试卷重查区" Font-Bold="True"></asp:Label>
                      </div>
@@ -662,24 +685,35 @@ menu.main ul li menu.sub ul li
                      </asp:View>
                      </asp:MultiView>
                      </div>
-                     </ContentTemplate>
-                     <Triggers>
-                         <asp:PostBackTrigger ControlID="Button8" />
-                         <asp:PostBackTrigger ControlID="GridView3" />
-                         <asp:PostBackTrigger ControlID="GridView1" />
-                     </Triggers>
-                     </asp:UpdatePanel> 
             </div>
-                
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="Button5" />
+                <asp:AsyncPostBackTrigger ControlID="Button8" />
+                <asp:AsyncPostBackTrigger ControlID="GridView1" />
+                <asp:AsyncPostBackTrigger ControlID="GridView3" />
+            </Triggers>
+            </asp:UpdatePanel>    
             <div id="div4" style="clear:both; height: 4px;"></div>
-            <div id="footer">
-                 <asp:Label ID="Label4" runat="server" ForeColor="#FFFFFF" Font-Bold="True"></asp:Label>
-          
-                 <asp:Label ID="Label5" CssClass="FootName" runat="server" ForeColor="#FFFFFF" Font-Bold="True"></asp:Label>
-            
-                 <b id="b_current_time" style="color:white" class="FootDate"></b>
-            </div>
+            <asp:UpdatePanel ID="UpdatePanel_paperno" runat="server">
+            <ContentTemplate>    
+                <div id="footer">
+                     <asp:Label ID="Label4" runat="server" ForeColor="#FFFFFF" Font-Bold="True"></asp:Label>
+
+                     <asp:Label ID="Label5" CssClass="FootName" runat="server" ForeColor="#FFFFFF" Font-Bold="True"></asp:Label>
+
+                     <b id="b_current_time" style="color:white" class="FootDate"></b>
+                </div>
+             </ContentTemplate>
+             <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="Button5" />
+                <asp:AsyncPostBackTrigger ControlID="Button8" />
+                <asp:AsyncPostBackTrigger ControlID="GridView1" />
+                <asp:AsyncPostBackTrigger ControlID="GridView3" />
+             </Triggers>
+            </asp:UpdatePanel>
         </div>
+
       </div>
     </form>
 </body>

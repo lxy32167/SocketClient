@@ -45,6 +45,7 @@ namespace WebApplication1
 
         public int CheckNum;
         List<UMsgDefine.CheckData> CheckDataArray = new List<UMsgDefine.CheckData>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
@@ -85,9 +86,6 @@ namespace WebApplication1
                 //这部分是显示的Score
                 Score = new string[2];
                 Session["Score"] = Score;                 //重查时在textbox中显示分数
-                //这部分是用于保存的Score
-                SaveScore = new string[2];
-                Session["SaveScore"] = SaveScore;         //待废弃
 
                 Session["beChecked"] = beChecked;         //重查标记,用于重查完成后回到初始卷
                 //满分
@@ -394,6 +392,7 @@ namespace WebApplication1
             UMsgDefine.FM_SaveScore_Rsp fmSaveRsp;
             UMsgDefine.FM_SaveMarkInfo_Req fmSaveMarkInfoReq;
             UMsgDefine.FM_SaveMarkInfo_Rsp fmSaveMarkInfoRsp;
+
             int i = 0;
             byte[] SaveMarkMessage, RcvSaveMarkMessage;
             fmSaveReq.Score = new UMsgDefine.stSaveScore[5];
@@ -481,10 +480,6 @@ namespace WebApplication1
             }
             beChecked = (bool)Session["beChecked"];
             AfterGivingScore(beChecked);
-            for (i = 0; i < 2; i++)
-            {
-                ((string[])Session["SaveScore"])[i] = null;
-            }
         }
         /// <summary>
         /// 信标线程

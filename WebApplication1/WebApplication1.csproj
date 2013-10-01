@@ -229,6 +229,7 @@
       <DependentUpon>Blk.aspx</DependentUpon>
     </Compile>
     <Compile Include="Data\BlkUseClass.cs" />
+    <Compile Include="Data\DataModule.cs" />
     <Compile Include="Data\UConstDefine.cs" />
     <Compile Include="Data\UMsgDefine.cs" />
     <Compile Include="Data\UMyRecords.cs" />
